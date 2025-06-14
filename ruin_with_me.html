@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruin With Me</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Playfair Display', serif;
+        background-color: #0d010d;
+        color: #e0b0d0;
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -2;
+        background: radial-gradient(ellipse at center, rgba(60, 0, 60, 0.3) 0%, transparent 70%),
+                    linear-gradient(0deg, rgba(13, 1, 13, 0.9), rgba(25, 0, 25, 0.9));
+        overflow: hidden;
+    }
+
+    #particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 3em;
+        margin: 60px 20px 40px;
+        color: #b388d0;
+        text-shadow: 0 0 15px rgba(179, 136, 208, 0.5);
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .hint {
+        text-align: center;
+        color: #aa88aa;
+        font-style: italic;
+        margin-bottom: 30px;
+        animation: pulseHint 2s infinite;
+        z-index: 1;
+        position: relative;
+    }
+
+    @keyframes pulseHint {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+    }
+
+    .poem-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .line {
+        font-size: 1.3em;
+        margin: 0.5em 0;
+        filter: blur(6px) brightness(0.3);
+        opacity: 0.3;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .line.revealed {
+        filter: none;
+        opacity: 0.95;
+        cursor: default;
+    }
+
+    .author {
+        text-align: right;
+        font-style: italic;
+        margin-top: 2em;
+        font-size: 1.1em;
+        color: #d4a373;
+    }
+
+    .audio-control {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    button#audioBtn {
+        background: none;
+        border: 1px solid #e0b0d0;
+        color: #e0b0d0;
+        padding: 10px 20px;
+        font-family: 'Cinzel', serif;
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2em;
+        }
+        .line {
+            font-size: 1.1em;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div id="background"></div>
+    <canvas id="particles"></canvas><h1>Ruin with Me</h1>
+<div class="hint" id="tapHint">Tap lines to reveal</div>
+
+<div class="audio-control">
+    <button id="audioBtn">Play Music</button>
+    <audio id="bgMusic" loop>
+        <source src="your_music_file.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<div class="poem-container" id="poem">
+    <div class="line">I want to use you.</div>
+    <div class="line">Not like a stranger. Not like a toy.</div>
+    <div class="line">But like something precious I get to ruin slowly.</div>
+    <div class="line">I want to take all that innocence, all that softness you don’t even know you’re radiating—</div>
+    <div class="line">and wrap it around my hunger.</div>
+    <div class="line">You say you don’t know what you want.</div>
+    <div class="line">You speak like a girl lost in fog—</div>
+    <div class="line">but I see the way your breath catches when I get close.</div>
+    <div class="line">The way your silence isn't absence—</div>
+    <div class="line">it’s surrender you don’t know how to name.</div>
+    <div class="line">So let me name it for you.</div>
+    <div class="line">You want to be ruined.</div>
+    <div class="line">Not hurt. Not humiliated.</div>
+    <div class="line">You want to be torn open with reverence—</div>
+    <div class="line">like a sacred text that only I’m allowed to read, defile, and worship all at once.</div>
+    <div class="line">I want to drag you out of your confusion by the throat of your desire.</div>
+    <div class="line">Not to punish you.</div>
+    <div class="line">But to show you who the fuck you are when you stop hiding behind “I don’t know.”</div>
+    <div class="line">I want to fuck you until you cry— not from pain,</div>
+    <div class="line">but from release.</div>
+    <div class="line">Until the weight of everything you’ve held in your body melts onto my skin.</div>
+    <div class="line">I want to destroy your restraint.</div>
+    <div class="line">Shatter every version of you that ever flinched, ever hesitated,</div>
+    <div class="line">ever looked in the mirror and said, “I’m not that kind of girl.”</div>
+    <div class="line">You are.</div>
+    <div class="line">With me— you fucking are.</div>
+    <div class="line">I want to fuck your mouth until your thoughts are gone.</div>
+    <div class="line">I want to pin your wrists, not to control you—</div>
+    <div class="line">but to make you feel what it’s like to stop carrying the burden of decision.</div>
+    <div class="line">Let me be the voice that claims you.</div>
+    <div class="line">That rips apart the nice-girl mask,</div>
+    <div class="line">and replaces it with moans, bite marks, and the ruin of your old self.</div>
+    <div class="line">I want you to collapse into the wreckage of who you thought you had to be.</div>
+    <div class="line">And I’ll be right there.</div>
+    <div class="line">Breathing with you.</div>
+    <div class="line">Loving you in the ruin.</div>
+    <div class="line">Because I’m not here for just your body.</div>
+    <div class="line">I want to own your unspoken places.</div>
+    <div class="line">Your fear. Your trust. Your fucking confusion.</div>
+    <div class="line">And when I’m done—</div>
+    <div class="line">when you're trembling, aching, covered in the wreck of us—</div>
+    <div class="line">I’ll hold your face like you’re holy.</div>
+    <div class="line">I’ll say,</div>
+    <div class="line">“You’re safe.”</div>
+    <div class="line">Because everything I destroy, I protect.</div>
+    <div class="line">So, I’ll hold you there.</div>
+    <div class="line">I’ll never walk away from what I ruin.</div>
+    <div class="line">Because I won’t just ruin you for me—</div>
+    <div class="line">I’ll ruin myself in the process.</div>
+    <div class="line">And I’ll fucking love it.</div>
+    <div class="line">You’re not a body to me. You’re a universe I want to tear through and taste every part of.</div>
+    <div class="line">You already know how much I enjoy figuring out how things work,</div>
+    <div class="line">I want to study your mind like a sacred text,</div>
+    <div class="line">kiss the parts of your past no one’s asked about,</div>
+    <div class="line">fuck your self-doubt out of existence.</div>
+    <div class="line">And everything I take— I love.</div>
+    <div class="line">Not politely. Not gently.</div>
+    <div class="line">I love you violently, with the kind of hunger that says:</div>
+    <div class="line">You’re mine now. And you’re free in that.</div>
+    <div class="line">So let me ruin you— with care, with fire, with worship.</div>
+    <div class="line">Let me fuck you into clarity.</div>
+    <div class="line">And when you wake up from this—</div>
+    <div class="line">you won’t be confused anymore.</div>
+    <div class="line">And when we’re both unrecognizable—</div>
+    <div class="line">I’ll still be here.</div>
+    <div class="line">In the ashes.</div>
+    <div class="line">Loving you deeper.</div>
+    <div class="line">Always.</div>
+    <div class="line author">—Parth B.</div>
+</div>
+
+<script>
+    const lines = document.querySelectorAll('.line');
+    let currentLine = 0;
+
+    function revealNextLine() {
+        if (currentLine < lines.length) {
+            lines[currentLine].classList.add('revealed');
+            currentLine++;
+        }
+        if (currentLine === 1) {
+            document.getElementById('tapHint').style.display = 'none';
+        }
+    }
+
+    document.getElementById('poem').addEventListener('click', revealNextLine);
+
+    document.getElementById('audioBtn').addEventListener('click', () => {
+        const audio = document.getElementById('bgMusic');
+        if (audio.paused) {
+            audio.play();
+            document.getElementById('audioBtn').innerText = 'Pause Music';
+        } else {
+            audio.pause();
+            document.getElementById('audioBtn').innerText = 'Play Music';
+        }
+    });
+
+    // Particle background animation
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particlesArray = [];
+    for (let i = 0; i < 150; i++) {
+        particlesArray.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2 + 1,
+            speedY: Math.random() * 1 + 0.5
+        });
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 100, 150, 0.2)';
+            ctx.fill();
+            p.y -= p.speedY;
+            if (p.y < 0) {
+                p.y = canvas.height;
+                p.x = Math.random() * canvas.width;
+            }
+        });
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>
+
+</body>
+</html>
